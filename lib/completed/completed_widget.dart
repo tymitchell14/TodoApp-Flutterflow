@@ -5,11 +5,7 @@ import '/components/task_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'completed_model.dart';
 export 'completed_model.dart';
 
@@ -64,7 +60,7 @@ class _CompletedWidgetState extends State<CompletedWidget> {
                   },
                   child: Padding(
                     padding: MediaQuery.viewInsetsOf(context),
-                    child: AddTaskWidget(),
+                    child: const AddTaskWidget(),
                   ),
                 );
               },
@@ -91,19 +87,19 @@ class _CompletedWidgetState extends State<CompletedWidget> {
           ),
         ),
         body: Align(
-          alignment: AlignmentDirectional(0.0, 0.0),
+          alignment: const AlignmentDirectional(0.0, 0.0),
           child: Container(
             width: 400.0,
-            decoration: BoxDecoration(),
+            decoration: const BoxDecoration(),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Completed',
                       style:
@@ -148,7 +144,7 @@ class _CompletedWidgetState extends State<CompletedWidget> {
                           padding: EdgeInsets.zero,
                           scrollDirection: Axis.vertical,
                           itemCount: listViewTasksRecordList.length,
-                          separatorBuilder: (_, __) => SizedBox(height: 12.0),
+                          separatorBuilder: (_, __) => const SizedBox(height: 12.0),
                           itemBuilder: (context, listViewIndex) {
                             final listViewTasksRecord =
                                 listViewTasksRecordList[listViewIndex];
@@ -169,10 +165,10 @@ class _CompletedWidgetState extends State<CompletedWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 1.0),
+                    alignment: const AlignmentDirectional(-1.0, 1.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 1.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           GoRouter.of(context).prepareAuthEvent();
@@ -184,9 +180,9 @@ class _CompletedWidgetState extends State<CompletedWidget> {
                         text: 'Logout',
                         options: FFButtonOptions(
                           height: 70.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
@@ -205,7 +201,7 @@ class _CompletedWidgetState extends State<CompletedWidget> {
                       ),
                     ),
                   ),
-                ].divide(SizedBox(height: 12.0)),
+                ].divide(const SizedBox(height: 12.0)),
               ),
             ),
           ),
