@@ -1,7 +1,10 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'task_model.dart';
 export 'task_model.dart';
 
@@ -46,7 +49,7 @@ class _TaskWidgetState extends State<TaskWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -58,13 +61,13 @@ class _TaskWidgetState extends State<TaskWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: EdgeInsets.all(12.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
               Theme(
                 data: ThemeData(
-                  checkboxTheme: const CheckboxThemeData(
+                  checkboxTheme: CheckboxThemeData(
                     visualDensity: VisualDensity.compact,
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     shape: CircleBorder(),
@@ -72,7 +75,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                   unselectedWidgetColor: FlutterFlowTheme.of(context).alternate,
                 ),
                 child: Checkbox(
-                  value: _model.checkboxValue ??= widget.tasksDoc!.completed,
+                  value: _model.checkboxValue ??= widget!.tasksDoc!.completed,
                   onChanged: (newValue) async {
                     safeSetState(() => _model.checkboxValue = newValue!);
                     if (newValue!) {
@@ -92,7 +95,7 @@ class _TaskWidgetState extends State<TaskWidget> {
               Flexible(
                 child: Text(
                   valueOrDefault<String>(
-                    widget.tasksDoc?.title,
+                    widget!.tasksDoc?.title,
                     'title',
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
